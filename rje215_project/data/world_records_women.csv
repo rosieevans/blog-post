@@ -1,0 +1,61 @@
+Event,Performance,Wind,Avg. speed mph (kmph),Pts,Athlete,Nationality,Date,Meeting,Location,Country
+60 m,6.92,,19.40 (31.21),1248,Irina Privalova,RUS,11 Feb 1993,,Madrid,ESP
+60 m,6.92,,19.40 (31.21),1248,Irina Privalova,RUS,9 Feb 1995,,Madrid,ESP
+100 m,10.49,0.0,21.32 (34.32),1314,Florence Griffith Joyner,USA,16 Jul 1988,US Olympic Trials,Indianapolis,USA
+200 m,21.34,+1.3,20.97 (33.74),1308,Florence Griffith Joyner,USA,29 Sep 1988,Olympic Games,Seoul,KOR
+200 msh,21.87,,20.46 (32.92),1288,Merlene Ottey,JAM,13 Feb 1993,Meeting Pas de Calais,Liévin,FRA
+400 m,47.60,,18.80 (30.25),1304,Marita Koch,GDR,6 Oct 1985,World Cup,Canberra,AUS
+400 msh,49.17,,18.198 (29.286),1272,Femke Bol,NED,2 Mar 2024,World Championships,Glasgow,GBR
+800 m,1:53.28,,15.80 (25.42),1286,Jarmila Kratochvílová,TCH,26 Jul 1983,,Munich,FRG
+800 msh,1:55.82,,15.451 (24.866),1255,Jolanda Čeplak,SLO,3 Mar 2002,European Championships,Vienna,AUT
+1000 m,2:28.98,,15.015 (24.164),1251,Svetlana Masterkova,RUS,23 Aug 1996,Memorial Van Damme,Brussels,BEL
+1000 msh,2:30.94,,14.82 (23.851),1246,Maria Mutola,MOZ,25 Feb 1999,GE Galan,Stockholm,SWE
+1500 m,3:49.04,,14.650 (23.577),1295,Faith Kipyegon,KEN,7 Jul 2024,Meeting de Paris,Paris,FRA
+1500 msh,3:53.09,,14.395 (23.167),1285,Gudaf Tsegay,ETH,9 Feb 2021,Meeting Hauts-de-France Pas-de-Calais,Liévin,FRA
+Mile,4:07.64,,14.537 (23.395),1286,Faith Kipyegon,KEN,21 Jul 2023,Herculis,Monaco,MON
+Milesh,4:13.31,,14.212 (22.872),1273,Genzebe Dibaba,ETH,17 Feb 2016,Globen Galan,Stockholm,SWE
+Mile (road),4:20.98,,13.714 (22.071),1185,Diribe Welteji,ETH,1 Oct 2023,World Road Running Championships,Riga,LAT
+2000 m,5:19.70,,13.994 (22.521),1252,Jessica Hull,AUS,12 Jul 2024,Herculis,Monaco,MON
+3000 m,8:06.11,,13.805 (22.217),1293,Wang Junxia,CHN,13 Sep 1993,Chinese National Games,Beijing,CHN
+3000 msh,8:16.60,,13.514 (21.748),1281,Genzebe Dibaba,ETH,6 Feb 2014,XL Galan,Stockholm,SWE
+5000 m,14:00.21,,13.312 (21.423),1282,Gudaf Tsegay,ETH,17 Sep 2023,Prefontaine Classic,Eugene,USA
+5000 msh,14:18.86,,13.023 (20.958),1270,Genzebe Dibaba,ETH,19 Feb 2015,XL Galan,Stockholm,SWE
+5 km(road),14:13.00,,13.11 (21.10),1256,Beatrice Chebet,KEN,31 Dec 2023,Cursa dels Nassos,Barcelona,ESP
+"10,000 m",28:54.14,,12.899 (20.760),1309,Beatrice Chebet,KEN,25 May 2024,Prefontaine Classic,Eugene,USA
+10 km(road),28:46.00,,12.96 (20.86),1317,Agnes Ngetich,KEN,14 Jan 2024,10K Valencia Ibercaja,Valencia,ESP
+One hour(track),"18,930 m",,11.763 (18.930),N/A,Sifan Hassan,NED,4 Sep 2020,Diamond League,Brussels,BEL
+Half marathon,1:02:52,,12.512 (20.135),1281,Letesenbet Gidey,ETH,24 Oct 2021,Valencia Half Marathon,Valencia,ESP
+Marathon[e],2:09:56.00,,12.107 (19.485),1339,Ruth Chepng'etich,KEN,13 Oct 2024,Chicago Marathon,Chicago,USA
+50 km(road),2:59:54.00,,10.36 (16.68),N/A,Desiree Linden,USA,13 Apr 2021,Brooks Running 50 km & Marathon,Dorena Lake,USA
+100 km(road),6:33:11.00,,9.4822 (15.260),N/A,Tomoe Abe,JPN,25 Jun 2000,Lake Saroma Ultramarathon,Yūbetsu,JPN
+50 m hurdles,6.58,,17.00 (27.36),1231,Cornelia Oschkenat,GDR,20 Feb 1988,,East Berlin,GDR
+60 m hurdles,7.65,,17.55 (28.24),1242,Devynne Charlton,BAH,3 Mar 2024,World Championships,Glasgow,USA
+100 m hurdles,12.12,+0.9,18.457 (29.703),1272,Tobi Amusan,NGR,24 Jul 2022,World Championships,Eugene,USA
+400 m hurdles,50.37,,17.764 (28.588),1322,Sydney McLaughlin-Levrone,USA,8 Aug 2024,Olympic Games,Saint-Denis,FRA
+3000 m steeplechase,8:44.32,,12.799 (20.598),1285,Beatrice Chepkoech,KEN,20 Jul 2018,Herculis,Monaco,MON
+High jump,2.10 m,,,1319,Yaroslava Mahuchikh,UKR,7 Jul 2024,Meeting de Paris,Paris,FRA
+Pole vault,5.06 m,,,1290,Yelena Isinbayeva,RUS,28 Aug 2009,Weltklasse Zürich,Zürich,SUI
+Long jump,7.52 m,+1.4,,1333,Galina Chistyakova,URS,11 Jun 1988,Brothers Znamensky Memorial,Leningrad,URS
+Triple jump,15.74 m,N/A,,1297,Yulimar Rojas,VEN,20 Mar 2022,World Championships,Belgrade,SRB
+Shot put,22.63 m,,,1372,Natalya Lisovskaya,URS,7 Jun 1987,Brothers Znamensky Memorial,Moscow,URS
+Discus throw,76.80 m,,,1382,Gabriele Reinsch,GDR,9 Jul 1988,East Germany–Italy tournament,Neubrandenburg,GDR
+Hammer throw,82.98 m,,,1303,Anita Włodarczyk,POL,28 Aug 2016,Kamila Skolimowska Memorial,Warsaw,POL
+Javelin throw,72.28 m,,,1306,Barbora Špotáková,CZE,13 Sep 2008,World Athletics Final,Stuttgart,GER
+Pentathlonsh,5055 pts,,,1254,Nafi Thiam,BEL,3 Mar 2023,European Championships,Istanbul,TUR
+Heptathlon,7291 pts,,,1331,Jackie Joyner-Kersee,USA,24 Sep 1988,Olympic Games,Seoul,KOR
+Decathlon,8358 pts,,,N/A,Austra Skujytė,LTU,15 Apr 2005,Audrey Walton Combined Events,Columbia,USA
+3000 m walksh,11:40.33,,9.582 (15.421),1207,Claudia Iovan,ROU,30 Jan 1999,,Bucharest,ROU
+"10,000 m walk(track)",41:56.23,,8.890 (14.307),1196,Nadezhda Ryashkina,URS,24 Jul 1990,Goodwill Games,Seattle,USA
+"20,000 m walk(track)",1:26:52.30,,8.583 (13.814),1193,Olimpiada Ivanova,RUS,6 Sep 2001,Goodwill Games,Brisbane,AUS
+20 km walk(road),1:23:49,,8.896 (14.317),1248,Yang Jiayu,CHN,20 Mar 2021,Chinese Race Walking Championships,Huangshan,CHN
+35 km walk(road),2:37:15,,8.298 (13.355),1262,María Pérez,ESP,21 May 2023,European Race Walking Team Championships,Poděbrady,Czech Republic
+"50,000 m walk(track)",4:29:45.560,,6.910 (11.121),N/A,Katie Burnett,USA,13 Jul 2019,National Invitational Racewalks,San Diego,USA
+50 km walk(road),3:59:15,,7.791 (12.539),1244,Liu Hong,CHN,9 Mar 2019,Chinese Race Walk Grand Prix,Huangshan,CHN
+4 × 100 m relay,40.82,,21.92 (35.277),1273,Tianna MadisonAllyson FelixBianca KnightCarmelita Jeter,USA,10 Aug 2012,Olympic Games,London,GBR
+4 × 200 m relay,1:27.46,,20.461 (32.929),1233,LaTasha JenkinsLaTasha Colander-RichardsonNanceen PerryMarion Jones,USA,29 Apr 2000,Penn Relays,Philadelphia,USA
+4 × 200 m relaysh,1:32.41,,19.365 (31.166),1181,Yekaterina KondratyevaIrina KhabarovaYuliya PechonkinaYuliya Gushchina,RUS,29 Jan 2005,Aviva International Match,Glasgow,GBR
+4 × 400 m relay,3:15.17,,18.338 (29.513),1267,Tatyana LedovskayaOlga NazarovaMariya PiniginaOlga Bryzgina,URS,1 Oct 1988,Olympic Games,Seoul,KOR
+4 × 800 m relay,7:50.17,,15.225 (24.502),1260,Irina PodyalovskayaNadezhda OlizarenkoLyubov GurinaLyudmila Borisova,URS,5 Aug 1984,,Moscow,URS
+4 × 800 m relaysh,8:05.89,,14.732 (23.709),1295,Chrishuna WilliamsRaevyn RogersCharlene LipseyAjeé Wilson,USA,3 Feb 2018,Millrose Games,New York City,USA
+4 × 1500 m relay,16:27.02,,13.598 (21.884),1260,Colleen QuigleyElise CrannyKarissa SchweizerShelby Houlihan,USA,31 Jul 2020,Bowerman TC Intrasquad Meet IV,Portland,USA
+Road relay42.195 km,2:11:41.00,,11.946 (19.226),N/A,Jiang BoDong YanmeiZhao FengtingMa ZaijieLan LixinLi Na,CHN,28 Feb 1998,,Beijing,CHN
