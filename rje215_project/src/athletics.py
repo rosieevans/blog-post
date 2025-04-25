@@ -56,14 +56,6 @@ site = "https://en.wikipedia.org/wiki/List_of_world_records_in_athletics"
 response = BeautifulSoup(request.urlopen(site), "html.parser")
 tables = response.find_all("table", class_="wikitable")
 
-#url = "https://en.wikipedia.org/wiki/List_of_world_records_in_athletics"
-#headers = {"User-Agent": "Mozilla/5.0"}
-#response = requests.get(url, headers=headers)
-#soup = BeautifulSoup(response.text, "html.parser")
-
-# Find men's and women's tables:
-#tables = soup.find_all("table", {"class": "wikitable"})
-
 def get_table(table):
     data = []
     current_event = None
@@ -158,6 +150,8 @@ dobs = pd.read_csv(DAT + "dobs.csv")
 keely_data = pd.read_csv(DAT + "keely_data.csv")
 
 # COUNTRY AND CONTINENTS SECTION
+# Initially I was going to do some analysis on Nationalities and Continents of Record Breaking Athletes, but couldn't find any interesting plots or analysis from this
+# and was already on a tight word count/plot count, hence the columns added in this section do not go any further. 
 
 # Replace 'DNK' with 'DEN' in the Three_Letter_Country_Code column, for merge:
 df_continents['Three_Letter_Country_Code'] = df_continents['Three_Letter_Country_Code'].replace('DNK', 'DEN')
@@ -298,40 +292,25 @@ plt.clf()
 gap_time = ['100 m', '200 m', '800 m', '5000 m', '10,000 m', 'Half marathon', 'Marathon']
 gap_dist = ['High jump', 'Long jump', 'Pole vault', 'Javelin throw', 'Discus throw', 'Hammer throw']
 
-# Clean time events (convert to seconds):
-#def time_to_seconds(t):
-#    parts = t.split(':')
-#    try:
-#        parts = list(map(float, parts))
-#        if len(parts) == 3:
-#            return parts[0]*3600 + parts[1]*60 + parts[2]
-#        elif len(parts) == 2:
-#            return parts[0]*60 + parts[1]
-#        else:
-#            return float(parts[0])
-#    except:
-#        return None
-
+# Handle events formatted differently, i.e. variations of HH:MM:SS.FFF
 def time_to_seconds(t):
     try:
-        if pd.isna(t):  # Handle missing values (NaN)
+        if pd.isna(t):  
             return None
         parts = t.split(':')
         parts = list(map(float, parts))
-        if len(parts) == 3:  # HH:MM:SS.FFF
+        if len(parts) == 3:  
             return parts[0] * 3600 + parts[1] * 60 + parts[2]
-        elif len(parts) == 2:  # MM:SS.FFF
+        elif len(parts) == 2:  
             return parts[0] * 60 + parts[1]
-        else:  # Pure seconds or numeric string
+        else: 
             return float(parts[0])
     except Exception as e:
         print(f"Error converting time: {t}, {e}")
         return None
 
-#df_men['Performance_sec'] = df_men['Performance'].apply(time_to_seconds)
 df_men.loc[df_men['Event'].isin(gap_time), 'Performance_sec'] = df_men.loc[df_men['Event'].isin(gap_time), 'Performance'].apply(time_to_seconds)
 df_women.loc[df_women['Event'].isin(gap_time), 'Performance_sec'] = df_women.loc[df_women['Event'].isin(gap_time), 'Performance'].apply(time_to_seconds)
-#df_women['Performance_sec'] = df_women['Performance'].apply(time_to_seconds)
 
 # Clean distance events (remove 'm' and convert to float):
 df_men.loc[df_men['Event'].isin(gap_dist), 'Performance_m'] = df_men.loc[df_men['Event'].isin(gap_dist), 'Performance'].str.replace(' m', '', regex=False).astype(float)
