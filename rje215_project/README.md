@@ -17,8 +17,8 @@ This repository is structured as follows:
 ├── data  
 ├── src  
 └── results  
-         ── figures  
-         └── tables  
+.  |── figures  
+.  └── tables  
 
 All data is contained in the data sub-directory, all source code is contained
 in src, and all output is automatically exported to results.  
@@ -26,8 +26,8 @@ in src, and all output is automatically exported to results.
 ## Running instructions
 
 In order to replicate all results, if make is available it should be sufficient
-to type "make" at the command line. Prior to running make, the only change req-
-quired is to change the directory location indicated as ROOT in the python file
+to type "make" at the command line. Prior to running make, the only change required
+is to change the directory location indicated as ROOT in the python file
 in the src directory
 
 Alternatively, if make is not available, the following steps should be followed:
