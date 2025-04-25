@@ -438,12 +438,11 @@ group_women['Overall'] = overall_women
 
 # Table:
 df_avg_ages = pd.concat([group_men, group_women], keys=['Men', 'Women'])
-#df_avg_ages
 
 # Save:
-with open(TAB + 'avg_ages.txt', 'w') as f:
-    f.write(tabulate(df_avg_ages, headers="keys", tablefmt="grid"))
-    
+with open(TAB + "avg_ages.html", "w") as f:
+    f.write(df_avg_ages.to_html(index=False, border=1))
+
 #------------------------------------------------------------------------------
 #--- (7) Figure 4: Boxplot of above
 #------------------------------------------------------------------------------
@@ -487,14 +486,14 @@ fig, axes = plt.subplots(1, 2, figsize=(18, 10), sharex=True)
 
 # Men's Plot:
 axes[0].barh(df_men_sorted['Event'], df_men_sorted['Years Since'], color=men_colors, alpha=0.8)
-axes[0].set_title('Men\'s Longest Standing World Records')
+axes[0].set_title('Men\'s Longest Standing World Records', fontsize = 14)
 axes[0].set_xlabel('Years Since Record Was Set')
 axes[0].invert_yaxis()
 axes[0].grid(axis='x', linestyle='--', alpha=0.7)
 
 # Women's Plot:
 axes[1].barh(df_women_sorted['Event'], df_women_sorted['Years Since'], color=women_colors, alpha=0.8)
-axes[1].set_title('Women\'s Longest Standing World Records')
+axes[1].set_title('Women\'s Longest Standing World Records', fontsize = 14)
 axes[1].set_xlabel('Years Since Record Was Set')
 axes[1].invert_yaxis()
 axes[1].grid(axis='x', linestyle='--', alpha=0.7)
@@ -574,8 +573,12 @@ X = sm.add_constant(x_numeric)
 Y = keely_DL['Perf_seconds']
 model = sm.OLS(Y, X).fit()
 
-with open(TAB + "keely_summary.txt", "w") as f:
+# Save summary table as an HTML file:
+with open(TAB + "keely_summary.html", "w") as f:
+    f.write("<html>\n<head><title>Model Summary</title></head>\n<body>\n")
+    f.write("<pre>\n") 
     f.write(model.summary().as_text())
+    f.write("\n</pre>\n</body>\n</html>")
 
 # Trend line function:
 coeffs = model.params
@@ -592,7 +595,7 @@ extended_x_numeric = mdates.date2num(extended_dates)
 # Plot:
 plt.figure(figsize=(12, 7))
 plt.scatter(keely_DL['Date'], keely_DL['Perf_seconds'], label="Diamond League", color="green")
-plt.plot(extended_dates, trend_line(extended_x_numeric), color='black', linestyle='--', label="Extended Trend Line")
+plt.plot(extended_dates, trend_line(extended_x_numeric), color='black', linestyle='--', label="Trend Line")
 plt.axhline(y = record, color='red', linestyle='dotted', label="World Record (1:53.28)")
 
 # Add annotation:
