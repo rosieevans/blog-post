@@ -17,8 +17,8 @@ This repository is structured as follows:
 ├── data  
 ├── src  
 └── results  
-    ├── figures  
-    └── tables  
+         ── figures  
+         └── tables  
 
 All data is contained in the data sub-directory, all source code is contained
 in src, and all output is automatically exported to results.  
