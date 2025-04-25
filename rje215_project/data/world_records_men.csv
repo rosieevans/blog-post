@@ -11,9 +11,9 @@ Event,Performance,Wind,Avg. speed mph (kmph),Pts,Athlete,Nationality,Date,Meetin
 1000 m,2:11.96,,16.952 (27.281),1250,Noah Ngeny,KEN,5 Sep 1999,Rieti Meeting,Rieti,ITA
 1000 msh,2:14.20,,16.669 (26.826),1274,Ayanleh Souleiman,DJI,17 Feb 2016,Globen Galan,Stockholm,SWE
 1500 m,3:26.00,,16.288 (26.214),1302,Hicham El Guerrouj,MAR,14 Jul 1998,Golden Gala,Rome,ITA
-1500 msh,3:30.60,,15.933 (25.641),1292,Jakob Ingebrigtsen,NOR,17 Feb 2022,Meeting Hauts-de-France Pas-de-Calais,Liévin,FRA
+1500 msh,3:29.63+,,16.006 (25.760),1306,Jakob Ingebrigtsen,NOR,13 Feb 2025,Meeting Hauts-de-France Pas-de-Calais,Liévin,FRA
 Mile,3:43.13,,16.134 (25.965),1292,Hicham El Guerrouj,MAR,7 Jul 1999,Golden Gala,Rome,ITA
-Milesh,3:46.63,,15.885 (25.564),1309,Yared Nuguse,USA,8 Feb 2025,Millrose Games,New York City,USA
+Milesh,3:45.14,,15.990 (25.734),1330,Jakob Ingebrigtsen,NOR,13 Feb 2025,Meeting Hauts-de-France Pas-de-Calais,Liévin,FRA
 2000 m,4:43.13,,15.80 (25.43),1307,Jakob Ingebrigtsen,NOR,8 Sep 2023,Memorial van Damme,Brussels,BEL
 3000 m,7:17.55,,15.337 (24.683),1320,Jakob Ingebrigtsen,NOR,25 Aug 2024,Kamila Skolimowska Memorial,Chorzów,POL
 3000 msh,7:22.91,,15.152 (24.384),1312,Grant Fisher,USA,8 Feb 2025,Millrose Games,New York City,USA
@@ -44,7 +44,6 @@ Heptathlonsh,6645 pts,,,1269,Ashton Eaton,USA,10 Mar 2012,World Championships,Is
 Decathlon,9126 pts,,,1302,Kevin Mayer,FRA,16 Sep 2018,Décastar,Talence,FRA
 5000 m walksh,18:07.08,,10.289 (16.558),1220,Mikhail Shchennikov,RUS,14 Feb 1995,Russian Winter Meeting,Moscow,RUS
 "20,000 m walk(track)",1:17:25.60,,9.630 (15.499),1247,Bernardo Segura,MEX,7 May 1994,,Bergen,NOR
-20 km walk(road),1:16:36.00,,9.734 (15.666),1266,Yusuke Suzuki,JPN,15 Mar 2015,Asian Race Walking Championships,Nomi,JPN
 2 hours walk(track),"29,572 m",,9.188 (14.786),N/A,Maurizio Damilano,ITA,3 Oct 1992,,Cuneo,ITA
 "30,000 m walk(track)",2:01:44.10,,9.188 (14.786),N/A,Maurizio Damilano,ITA,3 Oct 1992,,Cuneo,ITA
 35 km walk(road),2:21:47,,,,Masatora Kawano,JPN,27 Oct 2024,All Japan Race Walking competition,Takahata,JPN
