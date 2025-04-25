@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
-Title: Data Science Project Investigating Athletics World Records
-Author: Rosie Evans
-Date: 2025-04-25
+Title: Data Science Project Investigating Athletics World Records  
+Author: Rosie Evans  
+Date: 2025-04-25  
 --------------------------------------------------------------------------------
 
 ## Introduction
