@@ -6,30 +6,27 @@
        
   Wikipedia contributors. "List of world records in athletics." Wikipedia.
     https://en.wikipedia.org/wiki/List_of_world_records_in_athletics.
-  
-    
-    # DAMIAN
-  The data has been provided in replication materials in csv format, and hence
-   is read in directly with pd.read_csv().  In order to replicate this file,
-   the only required change is the ROOT directory, indicated on line 29.
 
-   # ME
-  The data is firstly webscraped from the above link, before being used for
-   analysis later in the file.
-
-  Full details related to the replication of this file can be found in the 
-   README code in the top level of this directory.
+  The data is firstly webscraped from the above link, and saved as a csv.
+    This is then read in directly with pd.read_csv().
+    Full details related to the replication of this file can be found in the 
+    README code in the top level of this directory.
 
   Contact: mailto:rje215@exeter.ac.uk
 """
-
 #------------------------------------------------------------------------------
 #--- (0) Imports and directory locations
 #------------------------------------------------------------------------------
-ROOT = "C:/Users/DELL/Documents/UNI/Year_4/BEE2041 Data Science in Economics/rje215_project/"
-DAT  = ROOT+'data/'
-FIG  = ROOT+'results/figures/'
-TAB  = ROOT+'results/tables/'
+
+import os
+
+# Had some issues detecting filepaths, so used this method instead of the typical one shown in lectures
+SRC = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(SRC, ".."))
+#ROOT = "C:/Users/DELL/Documents/UNI/Year_4/BEE2041 Data Science in Economics/rje215_project/"
+DAT  = ROOT+"/data/"
+FIG  = ROOT+"/results/figures/"
+TAB  = ROOT+"/results/tables/"
 
 # Import libraries:
 import pandas as pd
@@ -38,10 +35,14 @@ import matplotlib.dates as mdates
 import numpy as np
 import statsmodels.api as sm
 import seaborn as sns
+import re
+import warnings
 from datetime import datetime 
 from matplotlib.ticker import FuncFormatter
 from matplotlib.patches import Patch
 from tabulate import tabulate
+from urllib import request, error
+from bs4 import BeautifulSoup
 
 #------------------------------------------------------------------------------
 #--- (1) Webscrape data and save to CSV files
@@ -51,20 +52,24 @@ from tabulate import tabulate
 # hence the flagging method used below, which is dissimilar to anything we looked at in class, hence I wanted to provide some reasoning to my potentially
 # strange approach.
 
-url = "https://en.wikipedia.org/wiki/List_of_world_records_in_athletics"
-headers = {"User-Agent": "Mozilla/5.0"}
-response = requests.get(url, headers=headers)
-soup = BeautifulSoup(response.text, "html.parser")
+site = "https://en.wikipedia.org/wiki/List_of_world_records_in_athletics"
+response = BeautifulSoup(request.urlopen(site), "html.parser")
+tables = response.find_all("table", class_="wikitable")
+
+#url = "https://en.wikipedia.org/wiki/List_of_world_records_in_athletics"
+#headers = {"User-Agent": "Mozilla/5.0"}
+#response = requests.get(url, headers=headers)
+#soup = BeautifulSoup(response.text, "html.parser")
 
 # Find men's and women's tables:
-tables = soup.find_all("table", {"class": "wikitable"})
+#tables = soup.find_all("table", {"class": "wikitable"})
 
-def parse_table(table):
+def get_table(table):
     data = []
     current_event = None
     rowspan_count = 0
     
-    # Get the header row (usually the second row):
+    # Get the header row:
     header_row = table.find_all("tr")[1]
     headers = [th.get_text(strip=True) for th in header_row.find_all("th")]
     headers.insert(0, "Event")  # Insert Event as first column header
@@ -112,19 +117,18 @@ def parse_table(table):
         row.append(is_flagged)
         data.append(row)
     
-    # Create data frame and assign column names:
+    # Create DataFrame and assign column names
     df = pd.DataFrame(data)
-    # In case there are extra columns, add generic names
-    #if len(df.columns) > len(headers) + 1:
-    #    for i in range(len(headers), len(df.columns) - 1):
-    #        headers.append(f"Column_{i}")
+    if len(df.columns) > len(headers) + 1:
+        for i in range(len(headers), len(df.columns) - 1):
+            headers.append(f"Column_{i}")
     column_names = headers + ["Flagged"]
     df.columns = column_names[:len(df.columns)]
-    
+
     # Remove flagged rows and drop flag column:
     df = df[df["Flagged"] == False].reset_index(drop=True)
     df = df.drop("Flagged", axis=1)
-    
+
     # Only keep relevant columns;
     my_cols = list(set(range(0, 12)) - {3})
     df = df.iloc[:, my_cols]
@@ -134,13 +138,12 @@ def parse_table(table):
 
     return df
 
-# Apply function to parse men's and women's tables
-df_men = parse_table(tables[0])
-df_women = parse_table(tables[1])
+# Apply function to get men's and women's tables
+df_men = get_table(tables[0])
+df_women = get_table(tables[1])
 
-# Save to CSV files
-df_men.to_csv("world_records_men.csv", index=False)
-df_women.to_csv("world_records_women.csv", index=False)
+df_men.to_csv(DAT + "world_records_men.csv", index=False)
+df_women.to_csv(DAT + "world_records_women.csv", index=False)
 
 #------------------------------------------------------------------------------
 #--- (2) Read in CSV files and prepare for analysis
@@ -153,7 +156,6 @@ df_world_records_women = pd.read_csv(DAT + "world_records_women.csv")
 df_continents = pd.read_csv(DAT + "country-and-continent-codes-list-csv.csv")
 dobs = pd.read_csv(DAT + "dobs.csv")  
 keely_data = pd.read_csv(DAT + "keely_data.csv")
-
 
 # COUNTRY AND CONTINENTS SECTION
 
@@ -177,13 +179,12 @@ df_women_cont = pd.merge(df_world_records_women, df_continents[['Three_Letter_Co
 # EVENTS SECTION
 
 # Replace 'Marathon[e]' with 'Marathon' in the Event column for tidiness
-df_men_cont['Event'] = df_men['Event'].replace('Marathon[e]', 'Marathon')
-df_women_cont['Event'] = df_women['Event'].replace('Marathon[e]', 'Marathon')
+df_men_cont['Event'] = df_men_cont['Event'].replace('Marathon[e]', 'Marathon')
+df_women_cont['Event'] = df_women_cont['Event'].replace('Marathon[e]', 'Marathon')
 
 # Separate events into their types:
 def classify_event(event):
-    event_lower = event.lower()
-    
+    event_lower = str(event).lower()
     if any(sh in event_lower for sh in ['msh', 'milesh', 'relaysh', 'onsh', 'walksh']):
         return 'Other'
     if 'walk' in event_lower:
@@ -228,7 +229,7 @@ df_women['Age'] = (df_women['Date'] - df_women['Female DOB']).dt.days / 365.25
 keely = keely_data[keely_data['Indoor'].isnull()].copy()
 
 # Convert values to the right formats:
-keely.loc[:, 'Date'] = pd.to_datetime(keely['Date'])
+keely.loc[:, 'Date'] = pd.to_datetime(keely['Date'], format="%d-%b-%y", errors="coerce")
 def time_to_seconds(time_str):
     mins, secs = map(float, time_str.split(":"))
     return mins * 60 + secs
@@ -255,7 +256,6 @@ non_olympic_years_women = df_women[~(((df_women['Year'] % 4 == 0) & (df_women['Y
 total_records_women = olympic_years_women + non_olympic_years_women
 olympic_percentage_women = (olympic_years_women / total_records_women) * 100
 non_olympic_percentage_women = (non_olympic_years_women / total_records_women) * 100
-
 
 # Data frame:
 year_data = pd.DataFrame({
@@ -299,25 +299,43 @@ gap_time = ['100 m', '200 m', '800 m', '5000 m', '10,000 m', 'Half marathon', 'M
 gap_dist = ['High jump', 'Long jump', 'Pole vault', 'Javelin throw', 'Discus throw', 'Hammer throw']
 
 # Clean time events (convert to seconds):
+#def time_to_seconds(t):
+#    parts = t.split(':')
+#    try:
+#        parts = list(map(float, parts))
+#        if len(parts) == 3:
+#            return parts[0]*3600 + parts[1]*60 + parts[2]
+#        elif len(parts) == 2:
+#            return parts[0]*60 + parts[1]
+#        else:
+#            return float(parts[0])
+#    except:
+#        return None
+
 def time_to_seconds(t):
-    parts = t.split(':')
     try:
+        if pd.isna(t):  # Handle missing values (NaN)
+            return None
+        parts = t.split(':')
         parts = list(map(float, parts))
-        if len(parts) == 3:
-            return parts[0]*3600 + parts[1]*60 + parts[2]
-        elif len(parts) == 2:
-            return parts[0]*60 + parts[1]
-        else:
+        if len(parts) == 3:  # HH:MM:SS.FFF
+            return parts[0] * 3600 + parts[1] * 60 + parts[2]
+        elif len(parts) == 2:  # MM:SS.FFF
+            return parts[0] * 60 + parts[1]
+        else:  # Pure seconds or numeric string
             return float(parts[0])
-    except:
+    except Exception as e:
+        print(f"Error converting time: {t}, {e}")
         return None
-df_men['Performance_sec'] = df_men['Performance'].apply(time_to_seconds)
-df_women['Performance_sec'] = df_women['Performance'].apply(time_to_seconds)
+
+#df_men['Performance_sec'] = df_men['Performance'].apply(time_to_seconds)
+df_men.loc[df_men['Event'].isin(gap_time), 'Performance_sec'] = df_men.loc[df_men['Event'].isin(gap_time), 'Performance'].apply(time_to_seconds)
+df_women.loc[df_women['Event'].isin(gap_time), 'Performance_sec'] = df_women.loc[df_women['Event'].isin(gap_time), 'Performance'].apply(time_to_seconds)
+#df_women['Performance_sec'] = df_women['Performance'].apply(time_to_seconds)
 
 # Clean distance events (remove 'm' and convert to float):
 df_men.loc[df_men['Event'].isin(gap_dist), 'Performance_m'] = df_men.loc[df_men['Event'].isin(gap_dist), 'Performance'].str.replace(' m', '', regex=False).astype(float)
 df_women.loc[df_women['Event'].isin(gap_dist), 'Performance_m'] = df_women.loc[df_women['Event'].isin(gap_dist), 'Performance'].str.replace(' m', '', regex=False).astype(float)
-
 
 # Calculate % diffs for track & field:
 results = []
@@ -330,17 +348,17 @@ for event in all_events:
         men_perf = men_row['Performance_sec']
         women_perf = women_row['Performance_sec']
         gap = ((women_perf - men_perf) / men_perf) * 100
-        color = 'mediumslateblue'
+        colour = 'mediumslateblue'
     else:  
         men_perf = float(men_row['Performance_m'])
         women_perf = float(women_row['Performance_m'])
         gap = ((men_perf - women_perf) / women_perf) * 100
-        color = 'seagreen'
+        colour = 'seagreen'
     
     results.append({
         'Event': event,
         'Gender_Gap': gap,
-        'Color': color
+        'Color': colour
     })
 
 gender_gap_df = pd.DataFrame(results)
@@ -359,9 +377,9 @@ plt.axhline(y=0, color='red', linestyle='dashed')
 
 # Legend:
 legend_elements = [
-    Patch(facecolor='red', edgecolor='red', label='Equal Performance'),
-    Patch(facecolor=time_color, edgecolor='black', label='Track (Timed) Events'),
-    Patch(facecolor=dist_color, edgecolor='black', label='Field (Measured) Events')
+    Patch(facecolor='red', label='Equal Performance'),
+    Patch(facecolor='mediumslateblue', label='Track (Timed) Events'),
+    Patch(facecolor='seagreen', label='Field (Measured) Events')
 ]
 plt.legend(handles=legend_elements, loc="best")
 
@@ -485,14 +503,14 @@ df_women_sort, women_groups, women_colours = plot_df(df_women)
 fig, axes = plt.subplots(1, 2, figsize=(18, 10), sharex=True)
 
 # Men's Plot:
-axes[0].barh(df_men_sorted['Event'], df_men_sorted['Years Since'], color=men_colors, alpha=0.8)
+axes[0].barh(df_men_sort['Event'], df_men_sort['Years Since'], color=men_colours, alpha=0.8)
 axes[0].set_title('Men\'s Longest Standing World Records', fontsize = 14)
 axes[0].set_xlabel('Years Since Record Was Set')
 axes[0].invert_yaxis()
 axes[0].grid(axis='x', linestyle='--', alpha=0.7)
 
 # Women's Plot:
-axes[1].barh(df_women_sorted['Event'], df_women_sorted['Years Since'], color=women_colors, alpha=0.8)
+axes[1].barh(df_women_sort['Event'], df_women_sort['Years Since'], color=women_colours, alpha=0.8)
 axes[1].set_title('Women\'s Longest Standing World Records', fontsize = 14)
 axes[1].set_xlabel('Years Since Record Was Set')
 axes[1].invert_yaxis()
@@ -572,6 +590,8 @@ x_numeric = mdates.date2num(keely_DL['Date'])
 X = sm.add_constant(x_numeric)
 Y = keely_DL['Perf_seconds']
 model = sm.OLS(Y, X).fit()
+# To remove warning message here for clean output:
+warnings.filterwarnings("ignore", message="`kurtosistest` p-value may be inaccurate with fewer than 20 observations")
 
 # Save summary table as an HTML file:
 with open(TAB + "keely_summary.html", "w") as f:
@@ -582,14 +602,14 @@ with open(TAB + "keely_summary.html", "w") as f:
 
 # Trend line function:
 coeffs = model.params
-trend_line = np.poly1d([coeffs[1], coeffs[0]])
+trend_line = np.poly1d([coeffs.iloc[1], coeffs.iloc[0]])
 
 # Find intersection (113.28 = current WR in seconds):
 record = 113.28
-intersect_date = mdates.num2date((113.28 - coeffs[0]) / coeffs[1])
+intersect_date = mdates.num2date((113.28 - coeffs.iloc[0]) / coeffs.iloc[1])
 
 # Make sure LOBF goes across the right x-axis range:
-extended_dates = pd.date_range(start='2021-01-01', end='2026-01-01', freq='M')
+extended_dates = pd.date_range(start='2021-01-01', end='2026-01-01', freq='ME')
 extended_x_numeric = mdates.date2num(extended_dates)
 
 # Plot:
