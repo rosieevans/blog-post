@@ -1,26 +1,24 @@
 --------------------------------------------------------------------------------
 Title: Data Science Project Investigating Athletics World Records
 Author: Rosie Evans
-Date: 2025-04-09
+Date: 2025-04-25
 --------------------------------------------------------------------------------
 
 ## Introduction
 
- This project creates a blog post style GitPages site to investigate trends in Athletics World Records for both men and women. It does so using webscraped data, as well as downloaded csv files.
- It generates both tabular and graphical output.
-...
+This project creates a blog post style GitPages site to investigate trends in Athletics World Records for both men and women. It does so using webscraped data, as well as downloaded csv files. It generates both tabular and graphical output.
 
 ## Repository overview
 This repository is structured as follows:
 
-├── README
-├── Makefile
-├── immigrationHeterogeneity.tex (markdown.md)
-├── data
-├── src (athletics.py)
-└── results
-    ├── figures
-    └── tables
+├── README  
+├── Makefile    
+├── index  
+├── data  
+├── src  
+└── results  
+    ├── figures  
+    └── tables  
 
 All data is contained in the data sub-directory, all source code is contained
 in src, and all output is automatically exported to results.  
@@ -33,24 +31,21 @@ quired is to change the directory location indicated as ROOT in the python file
 in the src directory
 
 Alternatively, if make is not available, the following steps should be followed:
-  (1) Run athletics.py in the source directory using python 3 after
-      changing the ROOT directory in the code (line 29).  This can be done with
+  (1) Run athletics.py in the source directory using python 3.
+      This can be done with
         python3 athletics.py
-  (2) Compile the latex file in the top level.  This can be done with.
-        xelatex immigrationHeterogeneity.tex
-        bibtex immigrationHeterogeneity.aux      
-        xelatex immigrationHeterogeneity.tex
-        xelatex immigrationHeterogeneity.tex
-  
+ 2) Compile the Markdown file into an HTML document using Pandoc  
+        pandoc index.md -o index.html
+        
 This has been tested using Python 3.12.3 for linux. Within python, a number
 of additional libraries are required.  These are indicated below, along with
 the version number used to generate original results:
-> matplotlib 3.5.2
-> numpy 1.21.5
-> pandas 1.4.4
-> statsmodels 0.13.2
-> seaborn 0.11.2
-> tabulate 0.8.10
+> matplotlib 3.5.2  
+> numpy 1.21.5  
+> pandas 1.4.4  
+> statsmodels 0.13.2  
+> seaborn 0.11.2  
+> tabulate 0.8.10  
  
 
 ## More resources
