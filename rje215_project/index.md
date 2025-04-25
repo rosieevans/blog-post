@@ -42,16 +42,9 @@ Due to limitations in the available age data, this section covers around half of
 
 Figure 3's distribution plot shows that men's data is densely clustered with dramatic outliers, while female data has less extreme values but is generally wider spread. From the breakdown in Table 1, we see that on average, men tend to set records at the slightly younger age of 26.27, compared to the female 26.94. But how does this vary across events?
 
-<div style="display: flex; align-items: center; justify-content: space-between;">
-  <div style="width: 400px;">
-    <iframe src="results/tables/avg_ages.html" width="100%" height="300" style="border: 1px solid #ccc;"></iframe>
-    <figcaption>Table 1: Mean, Median, Minimum, and Maximum Ages</figcaption>
-  </div>
-  <figure>
-    <img src="results/figures/ages_box.png" alt="Figure 3" width="400">
-    <figcaption>Figure 3: Age Distribution of Record Breakers</figcaption>
-  </figure>
-</div>
+[Table 1: Average Ages of Record Breakers](results/tables/avg_ages.html)
+
+![Figure 3: Boxplot of Ages of Record Breakers](results/figures/ages_box.png)
 
 Given the above categories, we can see that male track events tend to produce the youngest record breakers, all with mean ages of 23-24 years, significantly smaller than that of any other category. On the other hand, race walking appears to be dominated by older athletes, with nearly all values being in their early to mid-30s, indicating that experience is an advantage within this discipline. Given that walking is an endurance event where athletes improve with age, this is a stark contrast to running endurance disciplines, where younger athletes thrive. This could be to do with the toll that running marathons and similar events take on the joints and soft tissues, and maybe athletes simply cannot perform for sustained periods of time. 
 
@@ -85,10 +78,7 @@ The Diamond League offers a distinct appeal compared to the Olympics: unlike spo
 
 Performing an Ordinary Least Squares (OLS) Regression on just her Diamond League performances, it is important to note that Keely's progress is assumed to be linear, and the model does not account for injuries or potential tactics. The trend reveals the exciting prospect of a fafst-approaching new world record, with an intersection at 11th July, 2025. This lines up almost perfectly with this year's Diamond League London Athletics Meet, which takes place on 19th July, 2025. 
 
-<div style="text-align: center;">
-  <iframe src="results/tables/keely_summary.html" width="80%" height="400" style="border: 1px solid #ccc;"></iframe>
-  <figcaption>Table 2: Model Summary</figcaption>
-</div>
+[Table 2: Model Summary Table](results/tables/keely_summary.html)
 
 The coefficients of the model, shown in Table 2, reveal that it has a high R² value — i.e. 67.9% of the variance in results is explained by the model — as well as a small p-value, meaning it is indeed statistically significant. The gradient indicates a rough improvement of 0.004 sec/day.
 In July, Keely will be just 23 years old, where the mean female middle distance WR holder is 28. If she defies this statistic that would be a huge feat, however the initial 2031 prediction would indeed be when she is 29, so potentially reaching her prime at this age instead. In fact, Jarmila Kratochvílová was 32 in 1983, so either option seems realistic. 
