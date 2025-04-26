@@ -2,32 +2,32 @@
 
 What separates the fleeting records from the ones that stand the test of time? Is record-breaking an art, a science, or sheer luck?
 
-When people think of world records, and the pinnacle of sporting achievement, iconic events like the 100m sprint or marathon often come to mind: many people (sports fans or not) can easily recite Bolt's famous record of 9.58s recorded in Berlin in 2009, or Kipchoge's astonishing sub 2-hour effort in Vienna, 2019. 
+When people think of world records, and the pinnacle of sporting achievement, iconic events like the 100m sprint or marathon often come to mind: many people (sports fans or not) can easily recite Bolt's famous record of 9.58s set in Berlin in 2009, or Kipchoge's astonishing sub 2-hour effort in Vienna, 2019. 
 
 We already know that marginal gains are everything, from carbon-plated shoes to altitude training, and allow the athletes of today to constantly evolve their sports, but this blog post dives into the data behind the numbers to uncover what else makes a record breaker. This post explores how factors like age, timing, nationality, and event type play into world record performances, and aims to uncover the recipe to success through an exciting case study of one of the greatest rising stars of athletics in years.  
 
 ## How the Olympics Inspire Record Breakers
 
-Success at the Olympics is the ultimate goal for any athlete. As the most prestigious event in sport which only comes around once every four years, the weight of the games is incomparable to any other championships. As a result of this, athletes do not simply train their hardest 365 days a year: instead they meticulously structure their training cycles to physically peak at the right times, particularly for annual World Championships and of course every four years for the Olympics. In these moments of peak form and huge pressure is when athletes give the performance of a lifetime and, ultimately, records are broken.
+Success at the Olympics is the ultimate goal for any athlete. As the most prestigious event in sport, happening just once every four years, the weight of the games is incomparable to any other championships. As a result of this, athletes do not simply train their hardest 365 days a year: instead they meticulously structure their training cycles to peak physically at the right times, particularly for annual World Championships and of course every four years for the Olympics. It is in these moments of peak form and huge pressure that athletes give the performance of a lifetime and, ultimately, records are broken.
 
 ![Figure 1: Number of Records Broken in Olympic vs Non-Olympic Years for Men and Women](results/figures/olympic_years.png)
 
-The bar chart in Figure 1 illustrates how current world records reflect this, whle taking into account the anomalous Games of Tokyo 2021, which were delayed due to the COVID-19 pandemic, which would have upset training cycles hugely.
+The bar chart in Figure 1 illustrates how current world records reflect this, whle taking into account the anomalous Games of Tokyo 2021, which were delayed due to the COVID-19 pandemic, which would have majorly upset training cycles.
 
-If Olympic years were like any other, we would expect to see around 25% on world records set during those years. Strikingly, for women's events this number is nearly double the expected rate at 43.9%, highlighting how training is tailored in order to produce the best performances when it really counts. Male records still demonstrate this, although not as dramatically as the females, since it only exceeds the 25% mark by 5.6%.
+If Olympic years were like any other, we would expect to see around 25% of world records set during those years. Strikingly, for women's events this number is nearly double the expected rate at 43.9%, highlighting how training is tailored in order to produce the best performances when it really counts. Male records still demonstrate this, although not as dramatically as the females, since it only exceeds the 25% mark by 5.6%.
 
 This shows how athletes (and women in particular) are timing their peak performances to coincide with the Games. However, training cycles are not the only factor in setting a world record: let's dive a little deeper into how demographics and event type affect how 'breakable' a record really is.
 
 ## How Wide is the Gender Gap?
 
-It is well established that, due to biological and physiological differences, men tend to outperform women in many physical disciplines, and hence their separation in sporting competitions. There is also a social aspect: for years, women were unable to compete in many sports as they were deemed to be too weak, with the women's marathon only making its Olympic debut at the 1984 Games in Los Angeles. Events which require power, through a muscular physique (like sprints or throws) were also seen to be unfeminine, and so these exclusions meant that women had far less opportunities to develop their athletic potential then men, and ultimately contributed to the  performance gender gap seen today.
+It is well established that, due to biological and physiological differences, men tend to outperform women in many physical disciplines, and hence their separation in sporting competitions. There is also a social aspect: for years, women were unable to compete in many sports as they were deemed too weak, with the women's marathon only making its Olympic debut at the 1984 Games in Los Angeles. Events which require power, through a muscular physique (like sprints or throws) were also seen to be unfeminine, and so these exclusions meant that women had far less opportunities to develop their athletic potential then men, and ultimately contributed to the  performance gender gap seen today.
 But just how big is that performance gap, and does it vary across events?
 
 ![Figure 2: Gender Gap across Events](results/figures/gender_gap.png)
 
 As shown in Figure 2, the percentage difference between men’s and women’s world records does vary by discipline. Percentage values are calculated as ((W - M) / M) × 100 for timed track events, and ((M - W) / W) × 100 for distance measured field events. In both cases, positive values represent how much men outperform women, relative to the men's record.
 
-On the track, differences remain consistent a around 10-11%, although the discrepancy peaks at 12.26% for the 800m, while the marathon shows only a 7% time increase on the men's. This could be indicative of women having some kind of advantage in endurance, such as better energy conservation or aerobic efficiency. 
+On the track, differences remain consistent at around 10-11%, although the discrepancy peaks at 12.26% for the 800m, while the marathon shows only a 7% time increase on the men's. This could be indicative of women having some kind of advantage in endurance, such as better energy conservation or aerobic efficiency. 
 
 For field events, the male to female performance margins vary much more widely. The men's javelin throw record is 36% better than that of the women, while jumping events are not far behind. Incredibly, the women's discus record — which has stood since 1988 — is 3% better than the men's, and is the only athletics record to achieve such a feat. During this era, many athletes either tested positive for or later admitted to taking anabolic steroids, and so speculation remains over the use of performance enhancing drugs before the implementation of the IAAF's increased doping control measures in 2005. Despite this, many records still stand as without definitive proof it would be difficult to remove a record entirely. 
 
@@ -56,7 +56,7 @@ Now that we have explored the age at which athletes break records, let's look at
 
 ![Figure 4: Longest Standing World Records for Men and Women](results/figures/longest_records.png)
 
-The figure shows that now is a particularly exciting time for men’s long-distance running, indicated by the collection of green bars in the bottom left hand corner of the plot. In fact, the longest standing record of this kind was only recently set in December, 2019: the 10 km road record set by Joshua Cheptegei in Valencia. Despite a global pandemic shortly after this, distance athletes were still able to train, since they didn't require track or specific equipment, unlike pole vault for example which is difficult to train from home. Hence, world records in these disciplines have been consistently improved since this period.
+The figure shows that now is a particularly exciting time for men’s long-distance running, indicated by the collection of green bars in the bottom left hand corner of the plot. In fact, the longest standing record of this kind was only recently set in December, 2019: the 10 km road record set by Joshua Cheptegei in Valencia. Despite a global pandemic shortly after this, distance athletes were still able to train, since they didn't require track or specific equipment, unlike pole vault for example which is difficult to train from home. Hence, world records in these disciplines have consistently improved since this period.
 
 Returning to men's pole vault, Mondo Duplantis is the most recent record breaker, since he cleared a height of 6.27 metres on February 28, 2025, at the All Star Perche in Clermont-Ferrand, France. He first broke the record in February 2020, which he has since bettered by 10cm, and — as previously discussed — this number is only likely to improve.
 
@@ -64,7 +64,7 @@ Notably, the women's 800m world record has lasted a staggering 42 years, since J
 
 ## Is the Unbreakable soon to be Broken?
 
-The current women's 800m Olympic champion — Great Britain's golden girl Keely Hodgkinson —— looks to be a serious contender. She is the fastest European this century, and recently ran a personal best over 800m of 1:54.61 in July, 2024. After losing out to USA's Athing Mu to secure silver at the Tokyo Olympics, Keely won gold at Paris 2024, although without Athing at her side as a result of a fall at her Olympic trial. The pair have a great rivalry, pushing each other to give their best performances and making the sport an absolute thrill for spectators. With Keely and Athing placed at 6th and 9th, respectively, in the all-time list aged just 22 and 21 at the times of racing, prospects are looking promising for these young talents and their seemingly impossible task of breaking THAT record.
+The current women's 800m Olympic champion — Great Britain's golden girl Keely Hodgkinson —— looks to be a serious contender. She is the fastest European this century, and recently ran a personal best over 800m, clocking a time of 1:54.61 in July, 2024. After losing out to USA's Athing Mu to secure silver at the Tokyo Olympics, Keely won gold at Paris 2024, although without Athing at her side as a result of a fall at her Olympic trial. The pair have a great rivalry, pushing each other to give their best performances and making the sport an absolute thrill for spectators. With Keely and Athing placed at 6th and 9th, respectively, in the all-time list aged just 22 and 21 at the times of racing, prospects are looking promising for these young talents and their seemingly impossible task of breaking THAT record.
 
 The following plot — which takes into account all of Keely's Domestic and Major Championship performances, colour coded by championship — does indeed show a gradual progression in her 800m times since May 2021. If this steady progress continued, we could expect her to break the world record at some time in 2031, one year before the 2032 Brisbane Olympic Games. However, this is not an accurate representation of her best efforts: Keely can win a UK Athletics Championship more comfortably than an Olympic Gold, for example, and so maybe focus needs to pinpoint on where the stakes are highest, or where she runs her fastest, with the pressure of Athing Mu at her side.
 
@@ -76,7 +76,7 @@ The Diamond League offers a distinct appeal compared to the Olympics: unlike spo
 
 ![Figure 6: Keely Hodgkinson's Diamond League Performances since 2021](results/figures/keely_DL.png)
 
-Performing an Ordinary Least Squares (OLS) Regression on just her Diamond League performances, it is important to note that Keely's progress is assumed to be linear, and the model does not account for injuries or potential tactics. The trend reveals the exciting prospect of a fafst-approaching new world record, with an intersection at 11th July, 2025. This lines up almost perfectly with this year's Diamond League London Athletics Meet, which takes place on 19th July, 2025. 
+Performing an Ordinary Least Squares (OLS) Regression on just her Diamond League performances, it is important to note that Keely's progress is assumed to be linear, and the model does not account for injuries or potential tactics. The trend reveals the exciting prospect of a fast-approaching new world record, with an intersection at 11th July, 2025. This lines up almost perfectly with this year's Diamond League London Athletics Meet, which takes place on 19th July, 2025. 
 
 [Table 2: Model Summary Table](results/tables/keely_summary.html)
 
