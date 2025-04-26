@@ -1,2 +1,2 @@
-Blog URL: https://rosieevans.github.io/athletics-blog/
-GitHub Repository: https://github.com/rosieevans/athletics-blog
+Blog URL: https://rosieevans.github.io/blog-post/  
+GitHub Repository: https://github.com/rosieevans/blog-post
